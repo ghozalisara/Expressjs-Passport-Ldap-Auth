@@ -1,0 +1,15 @@
+{
+  "serverConfig": {
+    "host": "127.0.0.1",
+    "port": 8090
+  },
+  "ldapConfig": {
+    "server": {
+      "url": "ldap://10.6.6.34:389",
+      "bindDN": "Adirectory",
+      "bindCredentials": "Ldap.2014",
+      "searchBase": "ou=DGDT,ou=SONELGAZ,dc=test-sig",
+      "searchFilter": "(sAMAccountName={{username}})"
+    }
+  }
+}

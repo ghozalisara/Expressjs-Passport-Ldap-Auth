@@ -16,7 +16,7 @@ export const authenticate = (req, res, next) => {
         }
         if (!user) {
             console.log(user)
-            res.render(path.join(__dirname, './../../views/login'), {
+            res.render(path.join(__dirname, './../../../client/views/login'), {
                 message: "Nom d'utilisateur ou Mot de passe incorrect"
             });
         }
@@ -24,7 +24,7 @@ export const authenticate = (req, res, next) => {
 
             debug("---------------new user-----------------------", user.uid);
             if (!hasRole(user)) {
-                res.render(path.join(__dirname, './../../views/login'), {
+                res.render(path.join(__dirname, './../../../client/views/login'), {
                     message: "Vous n'avez pas accès à cet environnement"
                 });
             }

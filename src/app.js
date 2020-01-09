@@ -8,10 +8,10 @@ import passport from 'passport';
 import cookieParser from 'cookie-parser';
 import session from 'express-session';
 
-import './libs/configPath';
-import './config/passport/passport';
+import '../src/server/libs/configPath';
+import '../src/server/config/passport/passport';
 
-import { authenticate, isAuthenticated } from './components/users/userServices';
+import { authenticate, isAuthenticated } from '../src/server/components/users/userServices';
 
 
 /** ****************** Create Express server.****  */
@@ -32,14 +32,14 @@ app.use(passport.session());
 
 /**************************** * view engine setup  *******************/
 
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, './client/views'));
 app.set('view engine', 'pug');
 
 /**************************** * Static files setup  *******************/
- app.use('/js', express.static(path.join(__dirname, './public/js/')));
- app.use('/js', express.static(path.join(__dirname, '../node_modules/particlesjs/dist/')));
+app.use('/js', express.static(path.join(__dirname, '../src/client/public/js/')));
+app.use('/js', express.static(path.join(__dirname, '../node_modules/particlesjs/dist/')));
 app.use('/css', express.static(path.join(__dirname, '../node_modules/bootstrap/dist/css/')));
-app.use('/css', express.static(path.join(__dirname, './public/css/')));
+app.use('/css', express.static(path.join(__dirname, '../src/client/public/css/')));
 
 /* **************************Routes ********************/
 app.use('/', routes);
@@ -49,12 +49,12 @@ app.use('/', routes);
 routes
     .route('/login')
     .get((req, res) => {
-        res.render(path.join(__dirname, './views/login'));
+        res.render(path.join(__dirname, './client/views/login'));
     }).post(authenticate);
 
 // Home route
 routes.route('/').get(isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, './public/index.html'));
+    res.sendFile(path.join(__dirname, '../src/client/public/index.html'));
 });
 
 // Logout route
