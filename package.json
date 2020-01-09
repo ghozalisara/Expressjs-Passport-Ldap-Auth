@@ -6,7 +6,7 @@
   "scripts": {
     "start": "concurrently --kill-others \" npm run dev-local",
     "dev-local": "set NODE_ENV=developmentLocal&& set DEBUG=app:*,app & clear & nodemon --exec babel-node src/server/bin/www",
-    "dev": "set NODE_ENV=development&& set DEBUG=app:*,app & clear & nodemon --exec babel-node src/bin/www",
+    "dev": "set NODE_ENV=development&& set DEBUG=app:*,app & clear & nodemon --exec babel-node src/server/bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
