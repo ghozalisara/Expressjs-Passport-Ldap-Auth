@@ -1,0 +1,15 @@
+{
+  "serverConfig": {
+    "host": "127.0.0.1",
+    "port": 8090
+  },
+  "ldapConfig": {
+    "server": {
+      "url": "ldap://www.ldap.forumsys.com:389",
+      "bindDN": "cn=read-only-admin,dc=example,dc=com",
+      "bindCredentials": "password",
+      "searchBase": "dc=example,dc=com",
+      "searchFilter": "(uid={{username}})"
+    }
+  }
+}

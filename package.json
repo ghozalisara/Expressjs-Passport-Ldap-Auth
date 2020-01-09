@@ -1,0 +1,39 @@
+{
+  "name": "ldap-auth-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "concurrently --kill-others \" npm run dev-local",
+    "dev-local": "set NODE_ENV=developmentLocal&& set DEBUG=app:*,app & clear & nodemon --exec babel-node src/bin/www",
+    "dev": "set NODE_ENV=development&& set DEBUG=app:*,app & clear & nodemon --exec babel-node src/bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Ghozali Sara",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "bootstrap": "^4.3.1",
+    "config": "^3.0.1",
+    "cookie-parser": "^1.4.4",
+    "esm": "^3.2.22",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "helmet": "^3.16.0",
+    "morgan": "^1.9.1",
+    "particles.js": "^2.0.0",
+    "particlesjs": "^2.2.2",
+    "passport": "^0.4.0",
+    "passport-ldapauth": "^2.1.3",
+    "path": "^0.12.7",
+    "pug": "^2.0.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.4.3",
+    "nodemon": "^1.18.10",
+    "ws": "3.3.2"
+  }
+}
